@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33516.290
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Clase_15.08 (CarpinteriaApp)", "Clase_15.08 (CarpinteriaApp).csproj", "{15B6DEFD-8EF4-4717-8FB0-52F07DC00BBF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{15B6DEFD-8EF4-4717-8FB0-52F07DC00BBF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{15B6DEFD-8EF4-4717-8FB0-52F07DC00BBF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{15B6DEFD-8EF4-4717-8FB0-52F07DC00BBF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{15B6DEFD-8EF4-4717-8FB0-52F07DC00BBF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {30CBFD82-CF9C-4962-84C7-6453E667353B}
+	EndGlobalSection
+EndGlobal

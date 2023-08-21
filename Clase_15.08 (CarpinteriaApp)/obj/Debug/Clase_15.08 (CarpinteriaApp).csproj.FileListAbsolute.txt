@@ -1,0 +1,11 @@
+C:\Users\gabyd\Documents\Visual Studio Projects (C)\Clase_15.08 (CarpinteriaApp)\bin\Debug\Clase_15.08 (CarpinteriaApp).exe.config
+C:\Users\gabyd\Documents\Visual Studio Projects (C)\Clase_15.08 (CarpinteriaApp)\bin\Debug\Clase_15.08 (CarpinteriaApp).exe
+C:\Users\gabyd\Documents\Visual Studio Projects (C)\Clase_15.08 (CarpinteriaApp)\bin\Debug\Clase_15.08 (CarpinteriaApp).pdb
+C:\Users\gabyd\Documents\Visual Studio Projects (C)\Clase_15.08 (CarpinteriaApp)\obj\Debug\Clase_15.08 (CarpinteriaApp).csproj.AssemblyReference.cache
+C:\Users\gabyd\Documents\Visual Studio Projects (C)\Clase_15.08 (CarpinteriaApp)\obj\Debug\Clase_15.08 (CarpinteriaApp).csproj.SuggestedBindingRedirects.cache
+C:\Users\gabyd\Documents\Visual Studio Projects (C)\Clase_15.08 (CarpinteriaApp)\obj\Debug\Clase_15._08__CarpinteriaApp_.FrmMenuPrincipal.resources
+C:\Users\gabyd\Documents\Visual Studio Projects (C)\Clase_15.08 (CarpinteriaApp)\obj\Debug\Clase_15._08__CarpinteriaApp_.Properties.Resources.resources
+C:\Users\gabyd\Documents\Visual Studio Projects (C)\Clase_15.08 (CarpinteriaApp)\obj\Debug\Clase_15.08 (CarpinteriaApp).csproj.GenerateResource.cache
+C:\Users\gabyd\Documents\Visual Studio Projects (C)\Clase_15.08 (CarpinteriaApp)\obj\Debug\Clase_15.08 (CarpinteriaApp).csproj.CoreCompileInputs.cache
+C:\Users\gabyd\Documents\Visual Studio Projects (C)\Clase_15.08 (CarpinteriaApp)\obj\Debug\Clase_15.08 (CarpinteriaApp).exe
+C:\Users\gabyd\Documents\Visual Studio Projects (C)\Clase_15.08 (CarpinteriaApp)\obj\Debug\Clase_15.08 (CarpinteriaApp).pdb
