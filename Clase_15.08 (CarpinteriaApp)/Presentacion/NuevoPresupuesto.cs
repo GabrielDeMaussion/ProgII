@@ -29,8 +29,10 @@ namespace Clase_15._08__CarpinteriaApp_.Presentacion
 
             //Ejecucion de metodos en orden
             ProximoPresupuesto();
-            //CargarProducto();
+            CargarProducto();
         }
+
+        
 
         //Metodos del formulario
         private void ProximoPresupuesto()
@@ -54,6 +56,26 @@ namespace Clase_15._08__CarpinteriaApp_.Presentacion
 
 
             conexion.Close();
+        }
+
+        private void CargarProducto()
+        {
+            SqlConnection conexion = new SqlConnection(); //172.16.10.196  alumnolab1  alumno1w1
+            conexion.ConnectionString = @"Data Source=172.16.10.196;Initial Catalog=Carpinteria_2023;User ID=alumno1w1;Password=alumno1w1";
+            conexion.Open();
+
+            SqlCommand comando = new SqlCommand();
+            comando.Connection = conexion;
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.CommandText = "SP_CONSULTAR_PRODUCTOS";
+
+            DataTable tabla = new DataTable();
+            tabla.Load(comando.ExecuteReader());
+
+            conexion.Close();
+            cboProducto.DataSource = tabla; 
+            cboProducto.ValueMember = tabla.Columns[0].ColumnName;
+            cboProducto.DisplayMember = tabla.Columns[0].ColumnName;
         }
     }
 }
