@@ -8,15 +8,17 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
-
+using Clase_15._08__CarpinteriaApp_.Entidades;
 
 namespace Clase_15._08__CarpinteriaApp_.Presentacion
 {
     public partial class NuevoPresupuesto : Form
     {
+        Presupuesto nuevo = null;
         public NuevoPresupuesto()
         {
             InitializeComponent();
+            nuevo = new Presupuesto(); 
         }
 
         private void NuevoPresupuesto_Load(object sender, EventArgs e)
@@ -75,7 +77,72 @@ namespace Clase_15._08__CarpinteriaApp_.Presentacion
             conexion.Close();
             cboProducto.DataSource = tabla; 
             cboProducto.ValueMember = tabla.Columns[0].ColumnName;
-            cboProducto.DisplayMember = tabla.Columns[0].ColumnName;
+            cboProducto.DisplayMember = tabla.Columns[1].ColumnName;
+        }
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            //Validaciones para evitar errores (se puede hacer mejor y mas corto)
+            if(cboProducto.SelectedIndex == -1)
+            {
+                MessageBox.Show("Seleccione un producto", "Control", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+            if ((txtCantidad.Text is null) || !(int.TryParse(txtCantidad.Text, out _)))
+            {
+                MessageBox.Show("Ingrese una cantidad valida", "Control", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+            foreach (DataGridViewRow prod in dgvDetalles.Rows)
+            {
+                if (prod.Cells["ColProducto"].Value.ToString() == cboProducto.Text)
+                {
+                    MessageBox.Show("Este producto ya esta presupuestado", "Control", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    return;
+                }
+            }
+            //Traer los datos del producto del combo a valores manejables por C#
+            DataRowView item = (DataRowView)cboProducto.SelectedItem;
+            int nro = Convert.ToInt32(item.Row.ItemArray[0]);
+            string nombre = item.Row.ItemArray[1].ToString();
+            double precio = Convert.ToDouble(item.Row.ItemArray[2]);
+
+            //Asignar los valores de C# a un objeto tipo Producto
+            Producto productoNuevo = new Producto(nro, nombre, precio);
+
+            //Tomar la cantidad relacionada al producto para crear un detalle
+            int cantidad = Convert.ToInt32(txtCantidad.Text);
+
+            DetallePresupuesto detalle = new DetallePresupuesto(productoNuevo, cantidad);
+
+            nuevo.AgregarDetalle(detalle);
+            dgvDetalles.Rows.Add(new object[] { detalle.Producto.ProductoNro, 
+                                                detalle.Producto.Nombre,
+                                                detalle.Producto.Precio,
+                                                detalle.Cantidad,
+                                                "Quitar"});
+
+            CalcularTotales();
+
+        }
+
+        private void CalcularTotales()
+        {
+            txtSubTotal.Text = nuevo.CalcularTotal().ToString();
+            if (!string.IsNullOrEmpty(txtDescuento.Text))
+            {
+                double desc = nuevo.CalcularTotal() * Convert.ToDouble(txtDescuento.Text);
+                txtTotal.Text = (nuevo.CalcularTotal() - desc).ToString();
+            }
+        }
+
+        private void dgvDetalles_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dgvDetalles.CurrentCell.ColumnIndex == 4) 
+            {
+                nuevo.QuitarDetalle(dgvDetalles.CurrentRow.Index);
+                dgvDetalles.Rows.RemoveAt(dgvDetalles.CurrentRow.Index);
+            }
         }
     }
 }

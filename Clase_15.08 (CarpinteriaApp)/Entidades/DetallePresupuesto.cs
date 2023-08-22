@@ -12,6 +12,12 @@ namespace Clase_15._08__CarpinteriaApp_.Entidades
         public Producto Producto { get; set; }
         public int Cantidad { get; set; }
 
+        //Constructor
+        public DetallePresupuesto(Producto producto = null,int cantidad = 1) 
+        { 
+            Producto = producto;
+            Cantidad = cantidad;
+        }
         
         //Metodos
 
