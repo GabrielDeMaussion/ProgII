@@ -9,4 +9,3 @@ C:\Users\gabyd\Documents\Visual Studio Projects (C)\Clase_15.08 (CarpinteriaApp)
 C:\Users\gabyd\Documents\Visual Studio Projects (C)\Clase_15.08 (CarpinteriaApp)\obj\Debug\Clase_15.08 (CarpinteriaApp).csproj.CoreCompileInputs.cache
 C:\Users\gabyd\Documents\Visual Studio Projects (C)\Clase_15.08 (CarpinteriaApp)\obj\Debug\Clase_15.08 (CarpinteriaApp).exe
 C:\Users\gabyd\Documents\Visual Studio Projects (C)\Clase_15.08 (CarpinteriaApp)\obj\Debug\Clase_15.08 (CarpinteriaApp).pdb
-C:\Users\gabyd\Documents\Visual Studio Projects (C)\Clase_15.08 (CarpinteriaApp)\obj\Debug\Clase_15._08__CarpinteriaApp_.Presentacion.NuevoPresupuesto.resources
