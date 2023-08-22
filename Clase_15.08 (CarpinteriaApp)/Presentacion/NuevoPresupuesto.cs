@@ -36,7 +36,7 @@ namespace Clase_15._08__CarpinteriaApp_.Presentacion
         private void ProximoPresupuesto()
         {
             SqlConnection conexion = new SqlConnection(); //172.16.10.196  alumnolab1  alumno1w1
-            conexion.ConnectionString = @"Data Source=172.16.10.196;Initial Credentials=";
+            conexion.ConnectionString = @"Data Source=172.16.10.196;Initial Catalog=Carpinteria_2023;User ID=alumno1w1;Password=alumno1w1";
             conexion.Open();
 
             SqlCommand comando = new SqlCommand();
@@ -49,7 +49,8 @@ namespace Clase_15._08__CarpinteriaApp_.Presentacion
             parametro.SqlDbType = SqlDbType.Int;
             parametro.Direction = ParameterDirection.Output;
 
-            comando.Parameter
+            comando.Parameters.Add(parametro);
+            comando.ExecuteNonQuery();
 
 
             conexion.Close();
