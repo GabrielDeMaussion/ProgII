@@ -18,6 +18,7 @@ namespace Clase_15._08__CarpinteriaApp_
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new FrmMenuPrincipal());
             Application.Run(new Presentacion.FrmConsultarPresupuesto());
+            //testing
         }
     }
 }
