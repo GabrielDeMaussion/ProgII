@@ -22,3 +22,15 @@ C:\Users\gabyd\Desktop\Repositorio Programacion II\ProgII\Clase_15.08 (Carpinter
 C:\Users\gabyd\Desktop\Repositorio Programacion II\ProgII\Clase_15.08 (CarpinteriaApp)\obj\Debug\Clase_15.08 (CarpinteriaApp).csproj.CoreCompileInputs.cache
 C:\Users\gabyd\Desktop\Repositorio Programacion II\ProgII\Clase_15.08 (CarpinteriaApp)\obj\Debug\Clase_15.08 (CarpinteriaApp).exe
 C:\Users\gabyd\Desktop\Repositorio Programacion II\ProgII\Clase_15.08 (CarpinteriaApp)\obj\Debug\Clase_15.08 (CarpinteriaApp).pdb
+C:\Users\alumno\Source\Repos\ProgII\Clase_15.08 (CarpinteriaApp)\bin\Debug\Clase_15.08 (CarpinteriaApp).exe.config
+C:\Users\alumno\Source\Repos\ProgII\Clase_15.08 (CarpinteriaApp)\bin\Debug\Clase_15.08 (CarpinteriaApp).exe
+C:\Users\alumno\Source\Repos\ProgII\Clase_15.08 (CarpinteriaApp)\bin\Debug\Clase_15.08 (CarpinteriaApp).pdb
+C:\Users\alumno\Source\Repos\ProgII\Clase_15.08 (CarpinteriaApp)\obj\Debug\Clase_15.08 (CarpinteriaApp).csproj.AssemblyReference.cache
+C:\Users\alumno\Source\Repos\ProgII\Clase_15.08 (CarpinteriaApp)\obj\Debug\Clase_15.08 (CarpinteriaApp).csproj.SuggestedBindingRedirects.cache
+C:\Users\alumno\Source\Repos\ProgII\Clase_15.08 (CarpinteriaApp)\obj\Debug\Clase_15._08__CarpinteriaApp_.FrmMenuPrincipal.resources
+C:\Users\alumno\Source\Repos\ProgII\Clase_15.08 (CarpinteriaApp)\obj\Debug\Clase_15._08__CarpinteriaApp_.Presentacion.NuevoPresupuesto.resources
+C:\Users\alumno\Source\Repos\ProgII\Clase_15.08 (CarpinteriaApp)\obj\Debug\Clase_15._08__CarpinteriaApp_.Properties.Resources.resources
+C:\Users\alumno\Source\Repos\ProgII\Clase_15.08 (CarpinteriaApp)\obj\Debug\Clase_15.08 (CarpinteriaApp).csproj.GenerateResource.cache
+C:\Users\alumno\Source\Repos\ProgII\Clase_15.08 (CarpinteriaApp)\obj\Debug\Clase_15.08 (CarpinteriaApp).csproj.CoreCompileInputs.cache
+C:\Users\alumno\Source\Repos\ProgII\Clase_15.08 (CarpinteriaApp)\obj\Debug\Clase_15.08 (CarpinteriaApp).exe
+C:\Users\alumno\Source\Repos\ProgII\Clase_15.08 (CarpinteriaApp)\obj\Debug\Clase_15.08 (CarpinteriaApp).pdb

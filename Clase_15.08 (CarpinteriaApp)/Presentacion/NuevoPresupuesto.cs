@@ -9,16 +9,19 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using Clase_15._08__CarpinteriaApp_.Entidades;
+using Clase_15._08__CarpinteriaApp_.Datos;
 
 namespace Clase_15._08__CarpinteriaApp_.Presentacion
 {
     public partial class NuevoPresupuesto : Form
     {
+        DBHelper gestor = null;
         Presupuesto nuevo = null;
         public NuevoPresupuesto()
         {
             InitializeComponent();
             nuevo = new Presupuesto(); 
+            gestor= new DBHelper();
         }
 
         private void NuevoPresupuesto_Load(object sender, EventArgs e)
@@ -28,53 +31,21 @@ namespace Clase_15._08__CarpinteriaApp_.Presentacion
             txtCliente.Text = "Consumidor Final";
             txtDescuento.Text = "0";
             txtCantidad.Text = "1";
+            lblPresupuestoNro.Text = lblPresupuestoNro.Text + " " + (gestor.ProximoPresupuesto()).ToString();
+
 
             //Ejecucion de metodos en orden
-            ProximoPresupuesto();
+            gestor.ProximoPresupuesto();
             CargarProducto();
         }
 
         
 
         //Metodos del formulario
-        private void ProximoPresupuesto()
-        {
-            SqlConnection conexion = new SqlConnection(); //172.16.10.196  alumnolab1  alumno1w1
-            conexion.ConnectionString = @"Data Source=172.16.10.196;Initial Catalog=Carpinteria_2023;User ID=alumno1w1;Password=alumno1w1";
-            conexion.Open();
-
-            SqlCommand comando = new SqlCommand();
-            comando.Connection = conexion;
-            comando.CommandType = CommandType.StoredProcedure;
-            comando.CommandText = "SP_PROXIMO_ID";
-
-            SqlParameter parametro = new SqlParameter();
-            parametro.ParameterName = "@next";
-            parametro.SqlDbType = SqlDbType.Int;
-            parametro.Direction = ParameterDirection.Output;
-
-            comando.Parameters.Add(parametro);
-            comando.ExecuteNonQuery();
-
-
-            conexion.Close();
-        }
-
         private void CargarProducto()
         {
-            SqlConnection conexion = new SqlConnection(); //172.16.10.196  alumnolab1  alumno1w1
-            conexion.ConnectionString = @"Data Source=172.16.10.196;Initial Catalog=Carpinteria_2023;User ID=alumno1w1;Password=alumno1w1";
-            conexion.Open();
+            DataTable tabla = gestor.Consultar("SP_CONSULTAR_PRODUCTOS");
 
-            SqlCommand comando = new SqlCommand();
-            comando.Connection = conexion;
-            comando.CommandType = CommandType.StoredProcedure;
-            comando.CommandText = "SP_CONSULTAR_PRODUCTOS";
-
-            DataTable tabla = new DataTable();
-            tabla.Load(comando.ExecuteReader());
-
-            conexion.Close();
             cboProducto.DataSource = tabla; 
             cboProducto.ValueMember = tabla.Columns[0].ColumnName;
             cboProducto.DisplayMember = tabla.Columns[1].ColumnName;
@@ -143,6 +114,56 @@ namespace Clase_15._08__CarpinteriaApp_.Presentacion
                 nuevo.QuitarDetalle(dgvDetalles.CurrentRow.Index);
                 dgvDetalles.Rows.RemoveAt(dgvDetalles.CurrentRow.Index);
             }
+        }
+
+        private void btnAceptar_Click(object sender, EventArgs e)
+        {
+            //Validacion
+            if (string.IsNullOrEmpty(txtCliente.Text) )
+            {
+                MessageBox.Show("Debe ingresar un cliente", "Control", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+            if (dgvDetalles.Rows.Count == 0)
+            {
+                MessageBox.Show("Debe ingresar al menos un detalle", "Control", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+
+            
+
+
+
+            //Confirmacion de el grabado
+            GrabarPresupuesto();
+
+        }
+
+        private void GrabarPresupuesto()
+        {
+            nuevo.Fecha = Convert.ToDateTime(txtFecha.Text);
+            nuevo.Cliente = txtCliente.Text;
+            nuevo.Descuento = Convert.ToInt32(txtDescuento.Text);
+
+            if (gestor.ConfirmarPresupuesto(nuevo))
+            {
+                MessageBox.Show("Se cargo con exito el presupuesto", "Informe", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+                this.Dispose();
+            }
+            else
+            {
+                MessageBox.Show("Error al cargar el presupuesto", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            
+
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
         }
     }
 }
