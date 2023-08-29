@@ -66,13 +66,65 @@ namespace Clase_15._08__CarpinteriaApp_.Datos
         {
             bool resultado = true;
 
+            SqlTransaction t = null;
+            try {
             conexion.Open();
 
+            //creacion y seleccion y tipo de comando que va a llegar a SQL
             SqlCommand comando = new SqlCommand();
             comando.Connection = conexion;
+            comando.Transaction = t;
             comando.CommandType = CommandType.StoredProcedure;
             comando.CommandText = "SP_INSERTAR_MAESTRO";
 
+            //Agregado de parametros al comando que llega con el SP
+            comando.Parameters.AddWithValue("@cliente", presupuesto.Cliente);
+            comando.Parameters.AddWithValue("@descuento", presupuesto.Descuento);
+            comando.Parameters.AddWithValue("@total", presupuesto.CalcularTotal().ToString());
+
+            SqlParameter parametro = new SqlParameter();
+            parametro.ParameterName = "@presupuesto_nro";
+            parametro.SqlDbType = SqlDbType.Int;
+            parametro.Direction = ParameterDirection.Output;
+            comando.Parameters.Add(parametro);
+
+            comando.ExecuteNonQuery();
+
+            int presupuestoNro = (int)parametro.Value;
+            int DetalleNro = 1;
+
+            SqlCommand cmdDetalle;
+            cmdDetalle = new SqlCommand("SP_INSERTAR_DETALLE", conexion, t);
+            cmdDetalle.CommandType = CommandType.StoredProcedure;
+
+            foreach (DetallePresupuesto detalle in presupuesto.Detalles)
+            {
+                cmdDetalle.Parameters.AddWithValue("@presupuesto_nro", presupuestoNro);
+                cmdDetalle.Parameters.AddWithValue("@detalle", DetalleNro);
+                cmdDetalle.Parameters.AddWithValue("@id_producto", detalle.Producto.ProductoNro);
+                cmdDetalle.Parameters.AddWithValue("@cantidad", detalle.Cantidad);
+                cmdDetalle.ExecuteNonQuery();
+                DetalleNro += 1;
+
+            }
+
+            t.Commit();
+
+            }catch(Exception ex)
+            {
+                if (t != null)
+                {
+                    t.Rollback();
+                    resultado = false;
+                }
+            }
+            finally 
+            {
+                if (conexion != null && conexion.State == ConnectionState.Open)
+                {
+                    conexion.Close();
+                }
+            }
 
             return resultado;
         }
