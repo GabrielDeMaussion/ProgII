@@ -62,6 +62,30 @@ namespace Clase_15._08__CarpinteriaApp_.Datos
             return tabla;
         }
 
+        public DataTable Consultar(string nombreSP, List<Parametros> lstParametros)
+        {
+            conexion.Open();
+
+            SqlCommand comando = new SqlCommand();
+            comando.Connection = conexion;
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.CommandText = nombreSP;
+            
+            //Recorrer y agregar tantos parametros como elementos de la lista al comando que ejecuta el SP
+            comando.Parameters.Clear();
+            foreach (Parametros p in lstParametros)
+            {
+                comando.Parameters.AddWithValue(p.Nombre, p.Valor);
+            }
+
+            DataTable tabla = new DataTable();
+            tabla.Load(comando.ExecuteReader());
+
+            conexion.Close();
+
+            return tabla;
+        }
+
         public bool ConfirmarPresupuesto(Presupuesto presupuesto)
         {
             bool resultado = true;
