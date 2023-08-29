@@ -50,6 +50,12 @@
     <Compile Include="Entidades\DetallePresupuesto.cs" />
     <Compile Include="Entidades\Presupuesto.cs" />
     <Compile Include="Entidades\Producto.cs" />
+    <Compile Include="Presentacion\FrmConsultarPresupuesto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\FrmConsultarPresupuesto.Designer.cs">
+      <DependentUpon>FrmConsultarPresupuesto.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentacion\FrmMenuPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>

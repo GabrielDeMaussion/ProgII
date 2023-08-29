@@ -165,5 +165,10 @@ namespace Clase_15._08__CarpinteriaApp_.Presentacion
         {
             this.Dispose();
         }
+
+        private void btnAgregar_Click_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }
