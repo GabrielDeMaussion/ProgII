@@ -15,9 +15,9 @@ namespace VeterinariaApp.Entidades
 
 
         //Propiedades
-        public string Nombre { get { return nombre; } set { nombre = value; } }
-        public int Edad { get { return edad; } set {  edad = value; } }
-        public string Tipo { get { return tipo; } set { tipo = value; } }
+        public string Nombre    { get { return nombre; }    set { nombre = value; } }
+        public int Edad         { get { return edad; }      set {  edad = value; } }
+        public string Tipo      { get { return tipo; }      set { tipo = value; } }
 
 
         //Constructor
