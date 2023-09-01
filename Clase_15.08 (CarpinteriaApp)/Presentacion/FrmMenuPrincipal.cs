@@ -21,7 +21,7 @@ namespace Clase_15._08__CarpinteriaApp_
         //Evento al clickear sobre "nuevo" en el menu "Presupuesto"
         private void nuevoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            NuevoPresupuesto nuevoPresupuesto = new NuevoPresupuesto();
+            FrmNuevoPresupuesto nuevoPresupuesto = new FrmNuevoPresupuesto();
             nuevoPresupuesto.ShowDialog();
         }
 

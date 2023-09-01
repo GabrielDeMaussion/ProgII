@@ -1,6 +1,6 @@
 ﻿namespace Clase_15._08__CarpinteriaApp_.Presentacion
 {
-    partial class NuevoPresupuesto
+    partial class FrmNuevoPresupuesto
     {
         /// <summary>
         /// Required designer variable.
