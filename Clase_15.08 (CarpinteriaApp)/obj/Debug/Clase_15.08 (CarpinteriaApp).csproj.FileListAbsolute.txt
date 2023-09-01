@@ -34,3 +34,4 @@ C:\Users\alumno\Source\Repos\ProgII\Clase_15.08 (CarpinteriaApp)\obj\Debug\Clase
 C:\Users\alumno\Source\Repos\ProgII\Clase_15.08 (CarpinteriaApp)\obj\Debug\Clase_15.08 (CarpinteriaApp).csproj.CoreCompileInputs.cache
 C:\Users\alumno\Source\Repos\ProgII\Clase_15.08 (CarpinteriaApp)\obj\Debug\Clase_15.08 (CarpinteriaApp).exe
 C:\Users\alumno\Source\Repos\ProgII\Clase_15.08 (CarpinteriaApp)\obj\Debug\Clase_15.08 (CarpinteriaApp).pdb
+C:\Users\gabyd\Desktop\Repositorio Programacion II\ProgII\Clase_15.08 (CarpinteriaApp)\obj\Debug\Clase_15._08__CarpinteriaApp_.Presentacion.FrmConsultarPresupuesto.resources

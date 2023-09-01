@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.dgvPresupuestos = new System.Windows.Forms.DataGridView();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.dtpFechaDesde = new System.Windows.Forms.DateTimePicker();
+            this.dtpFechaHasta = new System.Windows.Forms.DateTimePicker();
             this.txtCliente = new System.Windows.Forms.TextBox();
             this.lblFechaDesde = new System.Windows.Forms.Label();
             this.lblFechaHasta = new System.Windows.Forms.Label();
@@ -40,31 +40,47 @@
             this.btnBorrar = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.presupuesto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.total = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.acciones = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPresupuestos)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgvPresupuestos
             // 
+            this.dgvPresupuestos.AllowUserToAddRows = false;
+            this.dgvPresupuestos.AllowUserToDeleteRows = false;
+            this.dgvPresupuestos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvPresupuestos.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.dgvPresupuestos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPresupuestos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.presupuesto,
+            this.fecha,
+            this.cliente,
+            this.total,
+            this.acciones});
             this.dgvPresupuestos.Location = new System.Drawing.Point(12, 211);
             this.dgvPresupuestos.Name = "dgvPresupuestos";
+            this.dgvPresupuestos.ReadOnly = true;
             this.dgvPresupuestos.Size = new System.Drawing.Size(776, 168);
             this.dgvPresupuestos.TabIndex = 0;
             // 
-            // dateTimePicker1
+            // dtpFechaDesde
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(61, 22);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker1.TabIndex = 1;
+            this.dtpFechaDesde.Location = new System.Drawing.Point(61, 22);
+            this.dtpFechaDesde.Name = "dtpFechaDesde";
+            this.dtpFechaDesde.Size = new System.Drawing.Size(200, 20);
+            this.dtpFechaDesde.TabIndex = 1;
             // 
-            // dateTimePicker2
+            // dtpFechaHasta
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(360, 22);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker2.TabIndex = 2;
+            this.dtpFechaHasta.Location = new System.Drawing.Point(360, 22);
+            this.dtpFechaHasta.Name = "dtpFechaHasta";
+            this.dtpFechaHasta.Size = new System.Drawing.Size(200, 20);
+            this.dtpFechaHasta.TabIndex = 2;
             // 
             // txtCliente
             // 
@@ -100,6 +116,7 @@
             this.btnConsultar.TabIndex = 6;
             this.btnConsultar.Text = "Consultar";
             this.btnConsultar.UseVisualStyleBackColor = false;
+            this.btnConsultar.Click += new System.EventHandler(this.btnConsultar_Click);
             // 
             // lblCliente
             // 
@@ -139,8 +156,8 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.dateTimePicker1);
-            this.panel1.Controls.Add(this.dateTimePicker2);
+            this.panel1.Controls.Add(this.dtpFechaDesde);
+            this.panel1.Controls.Add(this.dtpFechaHasta);
             this.panel1.Controls.Add(this.lblFechaDesde);
             this.panel1.Controls.Add(this.lblFechaHasta);
             this.panel1.Controls.Add(this.btnConsultar);
@@ -150,6 +167,39 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(776, 183);
             this.panel1.TabIndex = 11;
+            // 
+            // presupuesto
+            // 
+            this.presupuesto.HeaderText = "Presupuesto";
+            this.presupuesto.Name = "presupuesto";
+            this.presupuesto.ReadOnly = true;
+            // 
+            // fecha
+            // 
+            this.fecha.HeaderText = "Fecha";
+            this.fecha.Name = "fecha";
+            this.fecha.ReadOnly = true;
+            // 
+            // cliente
+            // 
+            this.cliente.HeaderText = "Cliente";
+            this.cliente.Name = "cliente";
+            this.cliente.ReadOnly = true;
+            // 
+            // total
+            // 
+            this.total.HeaderText = "Total";
+            this.total.Name = "total";
+            this.total.ReadOnly = true;
+            this.total.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.total.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // acciones
+            // 
+            this.acciones.HeaderText = "Acciones";
+            this.acciones.Name = "acciones";
+            this.acciones.ReadOnly = true;
+            this.acciones.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             // 
             // FrmConsultarPresupuesto
             // 
@@ -163,6 +213,7 @@
             this.Controls.Add(this.dgvPresupuestos);
             this.Name = "FrmConsultarPresupuesto";
             this.Text = "FrmConsultarPresupuesto";
+            this.Load += new System.EventHandler(this.FrmConsultarPresupuesto_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPresupuestos)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -173,8 +224,8 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dgvPresupuestos;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.DateTimePicker dtpFechaDesde;
+        private System.Windows.Forms.DateTimePicker dtpFechaHasta;
         private System.Windows.Forms.TextBox txtCliente;
         private System.Windows.Forms.Label lblFechaDesde;
         private System.Windows.Forms.Label lblFechaHasta;
@@ -184,5 +235,10 @@
         private System.Windows.Forms.Button btnBorrar;
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn presupuesto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fecha;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cliente;
+        private System.Windows.Forms.DataGridViewTextBoxColumn total;
+        private System.Windows.Forms.DataGridViewButtonColumn acciones;
     }
 }

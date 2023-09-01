@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Datos\DBHelper.cs" />
+    <Compile Include="Datos\Parametros.cs" />
     <Compile Include="Entidades\DetallePresupuesto.cs" />
     <Compile Include="Entidades\Presupuesto.cs" />
     <Compile Include="Entidades\Producto.cs" />
@@ -70,6 +71,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Presentacion\FrmConsultarPresupuesto.resx">
+      <DependentUpon>FrmConsultarPresupuesto.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\FrmMenuPrincipal.resx">
       <DependentUpon>FrmMenuPrincipal.cs</DependentUpon>
     </EmbeddedResource>
