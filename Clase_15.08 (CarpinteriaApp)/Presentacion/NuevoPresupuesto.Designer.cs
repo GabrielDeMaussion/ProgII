@@ -82,7 +82,7 @@
             // 
             this.txtCliente.Location = new System.Drawing.Point(129, 90);
             this.txtCliente.Name = "txtCliente";
-            this.txtCliente.Size = new System.Drawing.Size(121, 20);
+            this.txtCliente.Size = new System.Drawing.Size(264, 20);
             this.txtCliente.TabIndex = 3;
             // 
             // txtDescuento
@@ -117,6 +117,7 @@
             this.btnAceptar.TabIndex = 7;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // btnCancelar
             // 
@@ -126,6 +127,7 @@
             this.btnCancelar.TabIndex = 8;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // dgvDetalles
             // 
