@@ -63,11 +63,11 @@
     <Compile Include="Presentacion\FrmMenuPrincipal.Designer.cs">
       <DependentUpon>FrmMenuPrincipal.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentacion\NuevoPresupuesto.cs">
+    <Compile Include="Presentacion\FrmNuevoPresupuesto.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentacion\NuevoPresupuesto.Designer.cs">
-      <DependentUpon>NuevoPresupuesto.cs</DependentUpon>
+    <Compile Include="Presentacion\FrmNuevoPresupuesto.Designer.cs">
+      <DependentUpon>FrmNuevoPresupuesto.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -77,8 +77,8 @@
     <EmbeddedResource Include="Presentacion\FrmMenuPrincipal.resx">
       <DependentUpon>FrmMenuPrincipal.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentacion\NuevoPresupuesto.resx">
-      <DependentUpon>NuevoPresupuesto.cs</DependentUpon>
+    <EmbeddedResource Include="Presentacion\FrmNuevoPresupuesto.resx">
+      <DependentUpon>FrmNuevoPresupuesto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

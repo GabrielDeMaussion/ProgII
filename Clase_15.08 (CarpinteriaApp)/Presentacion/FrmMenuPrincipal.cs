@@ -30,5 +30,10 @@ namespace Clase_15._08__CarpinteriaApp_
             FrmConsultarPresupuesto consultarPresupuesto = new FrmConsultarPresupuesto();
             consultarPresupuesto.ShowDialog();
         }
+
+        private void FrmMenuPrincipal_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
