@@ -1,0 +1,11 @@
+C:\Users\gabyd\Desktop\Repositorio Programacion II\ProgII\VeterinariaApp\bin\Debug\VeterinariaApp.exe.config
+C:\Users\gabyd\Desktop\Repositorio Programacion II\ProgII\VeterinariaApp\bin\Debug\VeterinariaApp.exe
+C:\Users\gabyd\Desktop\Repositorio Programacion II\ProgII\VeterinariaApp\bin\Debug\VeterinariaApp.pdb
+C:\Users\gabyd\Desktop\Repositorio Programacion II\ProgII\VeterinariaApp\obj\Debug\VeterinariaApp.csproj.AssemblyReference.cache
+C:\Users\gabyd\Desktop\Repositorio Programacion II\ProgII\VeterinariaApp\obj\Debug\VeterinariaApp.csproj.SuggestedBindingRedirects.cache
+C:\Users\gabyd\Desktop\Repositorio Programacion II\ProgII\VeterinariaApp\obj\Debug\VeterinariaApp.FrmPrincipal.resources
+C:\Users\gabyd\Desktop\Repositorio Programacion II\ProgII\VeterinariaApp\obj\Debug\VeterinariaApp.Properties.Resources.resources
+C:\Users\gabyd\Desktop\Repositorio Programacion II\ProgII\VeterinariaApp\obj\Debug\VeterinariaApp.csproj.GenerateResource.cache
+C:\Users\gabyd\Desktop\Repositorio Programacion II\ProgII\VeterinariaApp\obj\Debug\VeterinariaApp.csproj.CoreCompileInputs.cache
+C:\Users\gabyd\Desktop\Repositorio Programacion II\ProgII\VeterinariaApp\obj\Debug\VeterinariaApp.exe
+C:\Users\gabyd\Desktop\Repositorio Programacion II\ProgII\VeterinariaApp\obj\Debug\VeterinariaApp.pdb

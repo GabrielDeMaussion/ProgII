@@ -8,18 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace VeterinariaApp
+namespace VeterinariaApp.Presentacion
 {
-    public partial class FrmPrincipal : Form
+    public partial class FrmConsultarMascotas : Form
     {
-        public FrmPrincipal()
+        public FrmConsultarMascotas()
         {
             InitializeComponent();
-        }
-
-        private void FrmPrincipal_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }
