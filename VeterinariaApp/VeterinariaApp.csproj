@@ -46,6 +46,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Datos\DBHelper.cs" />
+    <Compile Include="Datos\Parametros.cs" />
     <Compile Include="Entidades\Cliente.cs" />
     <Compile Include="Entidades\Mascota.cs" />
     <Compile Include="Presentacion\FrmConsultarMascotas.cs">

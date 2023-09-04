@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using VeterinariaApp.Presentacion;
 
 namespace VeterinariaApp
 {
@@ -19,7 +20,43 @@ namespace VeterinariaApp
 
         private void FrmPrincipal_Load(object sender, EventArgs e)
         {
+            FrmConsultarMascotas frmConsultarMascotas = new FrmConsultarMascotas();
+        }
 
+
+        //Metodos
+
+        private void CambiarFormulario(Form Formulario)
+        {
+            //Limpia el panel si hay algun contenido
+            PanelContenido.Controls.Clear();
+
+            //Establece el formulario secundario en el panel
+            Formulario.TopLevel = false;
+            PanelContenido.Controls.Add(Formulario);
+            Formulario.Dock = DockStyle.Fill;
+            Formulario.FormBorderStyle = FormBorderStyle.None;
+            Formulario.Show();
+        }
+
+        //Metodo para cambiar entre formularios manteniendo ciertas propiedades (esto es gusto personal y testeo)
+        //===========================================================================================================
+        //private void CambiarFormulario(Form Formulario)
+        //{
+        //    this.Hide();
+
+        //    Formulario.StartPosition = FormStartPosition.Manual;
+        //    Formulario.Location = this.Location;
+        //    Formulario.ShowDialog();
+
+        //    this.Location = Formulario.Location;
+        //    this.Show();
+        //}
+        //===========================================================================================================
+
+        private void TSMConsutarMascotas_Click(object sender, EventArgs e)
+        {
+            CambiarFormulario(new FrmConsultarMascotas());
         }
     }
 }

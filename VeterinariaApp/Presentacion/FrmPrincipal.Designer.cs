@@ -29,111 +29,130 @@
         private void InitializeComponent()
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.archivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.clientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.mascotasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.consultasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.listarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.nuevoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.listarToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.consutarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.nuevoToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.TSMArchivo = new System.Windows.Forms.ToolStripMenuItem();
+            this.TSMSalir = new System.Windows.Forms.ToolStripMenuItem();
+            this.TSMCientes = new System.Windows.Forms.ToolStripMenuItem();
+            this.TSMConsultarClientes = new System.Windows.Forms.ToolStripMenuItem();
+            this.TSMNuevoCliente = new System.Windows.Forms.ToolStripMenuItem();
+            this.TSMMascotas = new System.Windows.Forms.ToolStripMenuItem();
+            this.TSMConsutarMascotas = new System.Windows.Forms.ToolStripMenuItem();
+            this.TSMNuevaMascota = new System.Windows.Forms.ToolStripMenuItem();
+            this.TSMAtenciones = new System.Windows.Forms.ToolStripMenuItem();
+            this.TSMConsultarAtenciones = new System.Windows.Forms.ToolStripMenuItem();
+            this.TSMNuevaAtencion = new System.Windows.Forms.ToolStripMenuItem();
+            this.PanelContenido = new System.Windows.Forms.Panel();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.archivoToolStripMenuItem,
-            this.clientesToolStripMenuItem,
-            this.mascotasToolStripMenuItem,
-            this.consultasToolStripMenuItem});
+            this.TSMArchivo,
+            this.TSMCientes,
+            this.TSMMascotas,
+            this.TSMAtenciones});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(800, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
-            // archivoToolStripMenuItem
+            // TSMArchivo
             // 
-            this.archivoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.salirToolStripMenuItem});
-            this.archivoToolStripMenuItem.Name = "archivoToolStripMenuItem";
-            this.archivoToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
-            this.archivoToolStripMenuItem.Text = "Archivo";
+            this.TSMArchivo.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.TSMSalir});
+            this.TSMArchivo.Name = "TSMArchivo";
+            this.TSMArchivo.Size = new System.Drawing.Size(60, 20);
+            this.TSMArchivo.Text = "Archivo";
             // 
-            // clientesToolStripMenuItem
+            // TSMSalir
             // 
-            this.clientesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.listarToolStripMenuItem,
-            this.nuevoToolStripMenuItem});
-            this.clientesToolStripMenuItem.Name = "clientesToolStripMenuItem";
-            this.clientesToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
-            this.clientesToolStripMenuItem.Text = "Clientes";
+            this.TSMSalir.Name = "TSMSalir";
+            this.TSMSalir.Size = new System.Drawing.Size(180, 22);
+            this.TSMSalir.Text = "Salir";
             // 
-            // mascotasToolStripMenuItem
+            // TSMCientes
             // 
-            this.mascotasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.listarToolStripMenuItem1});
-            this.mascotasToolStripMenuItem.Name = "mascotasToolStripMenuItem";
-            this.mascotasToolStripMenuItem.Size = new System.Drawing.Size(69, 20);
-            this.mascotasToolStripMenuItem.Text = "Mascotas";
+            this.TSMCientes.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.TSMConsultarClientes,
+            this.TSMNuevoCliente});
+            this.TSMCientes.Name = "TSMCientes";
+            this.TSMCientes.Size = new System.Drawing.Size(61, 20);
+            this.TSMCientes.Text = "Clientes";
             // 
-            // consultasToolStripMenuItem
+            // TSMConsultarClientes
             // 
-            this.consultasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.consutarToolStripMenuItem,
-            this.nuevoToolStripMenuItem1});
-            this.consultasToolStripMenuItem.Name = "consultasToolStripMenuItem";
-            this.consultasToolStripMenuItem.Size = new System.Drawing.Size(78, 20);
-            this.consultasToolStripMenuItem.Text = "Atenciones";
+            this.TSMConsultarClientes.Name = "TSMConsultarClientes";
+            this.TSMConsultarClientes.Size = new System.Drawing.Size(180, 22);
+            this.TSMConsultarClientes.Text = "Consultar";
             // 
-            // salirToolStripMenuItem
+            // TSMNuevoCliente
             // 
-            this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.salirToolStripMenuItem.Text = "Salir";
+            this.TSMNuevoCliente.Name = "TSMNuevoCliente";
+            this.TSMNuevoCliente.Size = new System.Drawing.Size(180, 22);
+            this.TSMNuevoCliente.Text = "Nuevo";
             // 
-            // listarToolStripMenuItem
+            // TSMMascotas
             // 
-            this.listarToolStripMenuItem.Name = "listarToolStripMenuItem";
-            this.listarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.listarToolStripMenuItem.Text = "Coonsultar";
+            this.TSMMascotas.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.TSMConsutarMascotas,
+            this.TSMNuevaMascota});
+            this.TSMMascotas.Name = "TSMMascotas";
+            this.TSMMascotas.Size = new System.Drawing.Size(69, 20);
+            this.TSMMascotas.Text = "Mascotas";
             // 
-            // nuevoToolStripMenuItem
+            // TSMConsutarMascotas
             // 
-            this.nuevoToolStripMenuItem.Name = "nuevoToolStripMenuItem";
-            this.nuevoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.nuevoToolStripMenuItem.Text = "Nuevo";
+            this.TSMConsutarMascotas.Name = "TSMConsutarMascotas";
+            this.TSMConsutarMascotas.Size = new System.Drawing.Size(180, 22);
+            this.TSMConsutarMascotas.Text = "Consultar";
+            this.TSMConsutarMascotas.Click += new System.EventHandler(this.TSMConsutarMascotas_Click);
             // 
-            // listarToolStripMenuItem1
+            // TSMNuevaMascota
             // 
-            this.listarToolStripMenuItem1.Name = "listarToolStripMenuItem1";
-            this.listarToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
-            this.listarToolStripMenuItem1.Text = "Consultar";
+            this.TSMNuevaMascota.Name = "TSMNuevaMascota";
+            this.TSMNuevaMascota.Size = new System.Drawing.Size(180, 22);
+            this.TSMNuevaMascota.Text = "Nueva";
             // 
-            // consutarToolStripMenuItem
+            // TSMAtenciones
             // 
-            this.consutarToolStripMenuItem.Name = "consutarToolStripMenuItem";
-            this.consutarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.consutarToolStripMenuItem.Text = "Consutar";
+            this.TSMAtenciones.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.TSMConsultarAtenciones,
+            this.TSMNuevaAtencion});
+            this.TSMAtenciones.Name = "TSMAtenciones";
+            this.TSMAtenciones.Size = new System.Drawing.Size(78, 20);
+            this.TSMAtenciones.Text = "Atenciones";
             // 
-            // nuevoToolStripMenuItem1
+            // TSMConsultarAtenciones
             // 
-            this.nuevoToolStripMenuItem1.Name = "nuevoToolStripMenuItem1";
-            this.nuevoToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
-            this.nuevoToolStripMenuItem1.Text = "Nuevo";
+            this.TSMConsultarAtenciones.Name = "TSMConsultarAtenciones";
+            this.TSMConsultarAtenciones.Size = new System.Drawing.Size(180, 22);
+            this.TSMConsultarAtenciones.Text = "Consutar";
+            // 
+            // TSMNuevaAtencion
+            // 
+            this.TSMNuevaAtencion.Name = "TSMNuevaAtencion";
+            this.TSMNuevaAtencion.Size = new System.Drawing.Size(180, 22);
+            this.TSMNuevaAtencion.Text = "Nueva";
+            // 
+            // PanelContenido
+            // 
+            this.PanelContenido.Location = new System.Drawing.Point(0, 27);
+            this.PanelContenido.Name = "PanelContenido";
+            this.PanelContenido.Size = new System.Drawing.Size(800, 420);
+            this.PanelContenido.TabIndex = 1;
             // 
             // FrmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.PanelContenido);
             this.Controls.Add(this.menuStrip1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "FrmPrincipal";
-            this.Text = "Form1";
+            this.Text = "Carpinteria App (Gabriel de Maussion)";
             this.Load += new System.EventHandler(this.FrmPrincipal_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -145,16 +164,18 @@
         #endregion
 
         private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem archivoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem clientesToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem listarToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem nuevoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem mascotasToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem listarToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem consultasToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem consutarToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem nuevoToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem TSMArchivo;
+        private System.Windows.Forms.ToolStripMenuItem TSMSalir;
+        private System.Windows.Forms.ToolStripMenuItem TSMCientes;
+        private System.Windows.Forms.ToolStripMenuItem TSMConsultarClientes;
+        private System.Windows.Forms.ToolStripMenuItem TSMNuevoCliente;
+        private System.Windows.Forms.ToolStripMenuItem TSMMascotas;
+        private System.Windows.Forms.ToolStripMenuItem TSMConsutarMascotas;
+        private System.Windows.Forms.ToolStripMenuItem TSMAtenciones;
+        private System.Windows.Forms.ToolStripMenuItem TSMConsultarAtenciones;
+        private System.Windows.Forms.ToolStripMenuItem TSMNuevaAtencion;
+        private System.Windows.Forms.ToolStripMenuItem TSMNuevaMascota;
+        private System.Windows.Forms.Panel PanelContenido;
     }
 }
 

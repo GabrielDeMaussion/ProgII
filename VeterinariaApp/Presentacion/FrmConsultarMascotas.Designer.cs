@@ -29,6 +29,12 @@
         private void InitializeComponent()
         {
             this.dgvMascotas = new System.Windows.Forms.DataGridView();
+            this.id_mascota = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.edad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Editar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.btnFiltrar = new System.Windows.Forms.Button();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.lblNombre = new System.Windows.Forms.Label();
@@ -39,12 +45,6 @@
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.id_mascota = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.edad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Editar = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMascotas)).BeginInit();
             this.SuspendLayout();
             // 
@@ -64,8 +64,46 @@
             this.dgvMascotas.Location = new System.Drawing.Point(12, 164);
             this.dgvMascotas.Name = "dgvMascotas";
             this.dgvMascotas.ReadOnly = true;
-            this.dgvMascotas.Size = new System.Drawing.Size(776, 274);
+            this.dgvMascotas.Size = new System.Drawing.Size(776, 244);
             this.dgvMascotas.TabIndex = 0;
+            // 
+            // id_mascota
+            // 
+            this.id_mascota.HeaderText = "ID";
+            this.id_mascota.Name = "id_mascota";
+            this.id_mascota.ReadOnly = true;
+            this.id_mascota.Visible = false;
+            // 
+            // nombre
+            // 
+            this.nombre.HeaderText = "Nombre";
+            this.nombre.Name = "nombre";
+            this.nombre.ReadOnly = true;
+            // 
+            // edad
+            // 
+            this.edad.HeaderText = "Edad";
+            this.edad.Name = "edad";
+            this.edad.ReadOnly = true;
+            // 
+            // tipo
+            // 
+            this.tipo.HeaderText = "Tipo";
+            this.tipo.Name = "tipo";
+            this.tipo.ReadOnly = true;
+            // 
+            // cliente
+            // 
+            this.cliente.HeaderText = "Cliente";
+            this.cliente.Name = "cliente";
+            this.cliente.ReadOnly = true;
+            // 
+            // Editar
+            // 
+            this.Editar.HeaderText = "Accion";
+            this.Editar.Name = "Editar";
+            this.Editar.ReadOnly = true;
+            this.Editar.Text = "accion";
             // 
             // btnFiltrar
             // 
@@ -155,49 +193,11 @@
             this.label1.TabIndex = 12;
             this.label1.Text = "Desde";
             // 
-            // id_mascota
-            // 
-            this.id_mascota.HeaderText = "ID";
-            this.id_mascota.Name = "id_mascota";
-            this.id_mascota.ReadOnly = true;
-            this.id_mascota.Visible = false;
-            // 
-            // nombre
-            // 
-            this.nombre.HeaderText = "Nombre";
-            this.nombre.Name = "nombre";
-            this.nombre.ReadOnly = true;
-            // 
-            // edad
-            // 
-            this.edad.HeaderText = "Edad";
-            this.edad.Name = "edad";
-            this.edad.ReadOnly = true;
-            // 
-            // tipo
-            // 
-            this.tipo.HeaderText = "Tipo";
-            this.tipo.Name = "tipo";
-            this.tipo.ReadOnly = true;
-            // 
-            // cliente
-            // 
-            this.cliente.HeaderText = "Cliente";
-            this.cliente.Name = "cliente";
-            this.cliente.ReadOnly = true;
-            // 
-            // Editar
-            // 
-            this.Editar.HeaderText = "Accion";
-            this.Editar.Name = "Editar";
-            this.Editar.ReadOnly = true;
-            this.Editar.Text = "accion";
-            // 
             // FrmConsultarMascotas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 420);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.comboBox2);
@@ -209,6 +209,7 @@
             this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.btnFiltrar);
             this.Controls.Add(this.dgvMascotas);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmConsultarMascotas";
             this.Text = "FrmConsultarMascotas";
             ((System.ComponentModel.ISupportInitialize)(this.dgvMascotas)).EndInit();
