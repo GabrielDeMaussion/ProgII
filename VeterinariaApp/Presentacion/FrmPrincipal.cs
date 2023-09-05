@@ -7,17 +7,22 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using VeterinariaApp.Datos;
 using VeterinariaApp.Presentacion;
 
 namespace VeterinariaApp
 {
     public partial class FrmPrincipal : Form
     {
-        //Instancia de todos los formuarios para manejo de datos ENTRE todos los formuarios
+        //Instancias
+        // ================================================================================================================================= //
+        //Instancia de todos los formuarios y clases para manejo de datos ENTRE todos los formuarios:
         FrmConsultarMascotas frmConsultarMascotas = new FrmConsultarMascotas();
 
 
-
+        //Instancia de la clase helper:
+        DBHelper dbHelper = new DBHelper();
+        // ================================================================================================================================= //
 
         public FrmPrincipal()
         {
@@ -31,20 +36,7 @@ namespace VeterinariaApp
 
 
         //Metodos
-
-        private void CambiarFormulario(Form Formulario)
-        {
-            //Limpia el panel si hay algun contenido
-            PanelContenido.Controls.Clear();
-
-            //Establece el formulario secundario en el panel
-            Formulario.TopLevel = false;
-            PanelContenido.Controls.Add(Formulario);
-            Formulario.Dock = DockStyle.Fill;
-            Formulario.FormBorderStyle = FormBorderStyle.None;
-            Formulario.Show();
-        }
-
+        // ================================================================================================================================= //
         //Metodo para cambiar entre formularios manteniendo ciertas propiedades (esto es gusto personal y testeo)
         //===========================================================================================================
         //private void CambiarFormulario(Form Formulario)
@@ -60,9 +52,39 @@ namespace VeterinariaApp
         //}
         //===========================================================================================================
 
+
+        //Metodo para cambiar entre formuarios usando "paneles" como marco de muestra
+        private void CambiarFormulario(Form Formulario)
+        {
+            //Limpia el panel si hay algun contenido
+            PanelContenido.Controls.Clear();
+
+            //Establece el formulario indicado como parametro de entrada en el panel
+            Formulario.TopLevel = false;
+            PanelContenido.Controls.Add(Formulario);
+            Formulario.Dock = DockStyle.Fill;
+            Formulario.FormBorderStyle = FormBorderStyle.None;
+            Formulario.Show();
+        }
+
+        // ================================================================================================================================= //
+
+
+
+        //Eventos
+        // ================================================================================================================================= //
+        //Evento por clickear sobre "Coonsultar mascotas"
         private void TSMConsutarMascotas_Click(object sender, EventArgs e)
         {
             CambiarFormulario(frmConsultarMascotas);
         }
+
+
+        // ================================================================================================================================= //
+
+
+
+
+
     }
 }

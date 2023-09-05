@@ -5,15 +5,21 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
+using System.Windows.Forms;
 
 namespace VeterinariaApp.Datos
 {
     internal class DBHelper
     {
         //Atributos
+        // ================================================================================================================================= //
         private SqlConnection conexion;
+        // ================================================================================================================================= //
+
+
 
         //Constructor
+        // ================================================================================================================================= //
         //(Mi opcion admite ingresar la cadena de conexion al instanciar "DBHelper", si no se ingresa nada, la cadena de conexion sera la mia por defecto)
         public DBHelper(SqlConnection Conexion = null) 
         {
@@ -26,9 +32,12 @@ namespace VeterinariaApp.Datos
                 conexion = Conexion;
             }
         }
+        // ================================================================================================================================= //
+
+
 
         //Metodos
-
+        // ================================================================================================================================= //
         //Consuta con o sin parametros a la base de datos por medio de procedimientos almacenados
         public DataTable ConsultarSP (string NombreSP = "", List<Parametros> Parametros = null)
         {
@@ -63,9 +72,30 @@ namespace VeterinariaApp.Datos
         }
 
 
+        public void CargarCombo(ComboBox Combo, string NombreSP)
+        {
+            //Limpiar el combo y cargar los datos de la consulta en una tabla
+            Combo.Items.Clear();
+            DataTable tabla = ConsultarSP(NombreSP);
+
+            //Asignar valores de la tabla al combo
+            Combo.DataSource = tabla;
+            Combo.ValueMember = tabla.Columns[0].ColumnName;
+            Combo.DisplayMember = tabla.Columns[1].ColumnName;
+
+            //Formateo del combo
+            Combo.DropDownStyle = ComboBoxStyle.DropDownList;
+            Combo.SelectedIndex = -1;
+        }
 
 
+        public void CargarGrilla(DataGridView grilla, List<Parametros> lista, string NombreSP)
+        {
 
+        }
+
+
+        // ================================================================================================================================= //
 
 
 
