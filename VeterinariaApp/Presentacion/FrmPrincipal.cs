@@ -13,6 +13,12 @@ namespace VeterinariaApp
 {
     public partial class FrmPrincipal : Form
     {
+        //Instancia de todos los formuarios para manejo de datos ENTRE todos los formuarios
+        FrmConsultarMascotas frmConsultarMascotas = new FrmConsultarMascotas();
+
+
+
+
         public FrmPrincipal()
         {
             InitializeComponent();
@@ -20,7 +26,7 @@ namespace VeterinariaApp
 
         private void FrmPrincipal_Load(object sender, EventArgs e)
         {
-            FrmConsultarMascotas frmConsultarMascotas = new FrmConsultarMascotas();
+
         }
 
 
@@ -56,7 +62,7 @@ namespace VeterinariaApp
 
         private void TSMConsutarMascotas_Click(object sender, EventArgs e)
         {
-            CambiarFormulario(new FrmConsultarMascotas());
+            CambiarFormulario(frmConsultarMascotas);
         }
     }
 }
