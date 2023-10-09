@@ -14,11 +14,12 @@ namespace VeterinariaApp.Datos
         //Atributos
         // ================================================================================================================================= //
         private SqlConnection conexion;
+        private static DBHelper instancia;
         // ================================================================================================================================= //
 
 
 
-        //Constructor
+        //Constructor e instancia
         // ================================================================================================================================= //
         //(Mi opcion admite ingresar la cadena de conexion al instanciar "DBHelper", si no se ingresa nada, la cadena de conexion sera la mia por defecto)
         public DBHelper(SqlConnection Conexion = null) 
@@ -31,6 +32,15 @@ namespace VeterinariaApp.Datos
             {
                 conexion = Conexion;
             }
+        }
+
+
+        //Genera una instancia del helper para facilitar su acceso y mantener consistencia con e manejo de datos (Singleton)
+        public static DBHelper ObtenerInstancia()
+        {
+            if (instancia == null)
+                instancia = new DBHelper();
+            return instancia;
         }
         // ================================================================================================================================= //
 
@@ -72,6 +82,7 @@ namespace VeterinariaApp.Datos
         }
 
 
+        //
         public void CargarCombo(ComboBox Combo, string NombreSP)
         {
             //Limpiar el combo y cargar los datos de la consulta en una tabla
@@ -89,8 +100,23 @@ namespace VeterinariaApp.Datos
         }
 
 
+        //
         public void CargarGrilla(DataGridView grilla, List<Parametros> lista, string NombreSP)
         {
+            DataTable tabla = ConsultarSP(NombreSP, lista); // Tabla de a base de datos
+            foreach (DataRow fila in tabla.Rows)
+            {
+                List<string> valores = new List<string>();
+
+                foreach (DataGridViewColumn columna in grilla.Columns)
+                {
+                    string valor = fila[columna.HeaderText].ToString();
+                    valores.Add(valor);
+                }
+
+                grilla.Rows.Add(valores.ToArray());
+            }
+
 
         }
 

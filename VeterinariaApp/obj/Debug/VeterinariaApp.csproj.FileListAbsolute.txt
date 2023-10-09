@@ -10,3 +10,4 @@ C:\Users\gabyd\Desktop\Repositorio Programacion II\ProgII\VeterinariaApp\obj\Deb
 C:\Users\gabyd\Desktop\Repositorio Programacion II\ProgII\VeterinariaApp\obj\Debug\VeterinariaApp.exe
 C:\Users\gabyd\Desktop\Repositorio Programacion II\ProgII\VeterinariaApp\obj\Debug\VeterinariaApp.pdb
 C:\Users\gabyd\Desktop\Repositorio Programacion II\ProgII\VeterinariaApp\obj\Debug\VeterinariaApp.Presentacion.FrmConsultarMascotas.resources
+C:\Users\gabyd\Desktop\Repositorio Programacion II\ProgII\VeterinariaApp\obj\Debug\VeterinariaApp.Presentacion.FrmLogIn.resources

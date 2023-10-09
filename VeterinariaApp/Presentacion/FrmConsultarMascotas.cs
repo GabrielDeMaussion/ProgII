@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,7 +14,6 @@ namespace VeterinariaApp.Presentacion
 {
     public partial class FrmConsultarMascotas : Form
     {
-        DBHelper dbHelper = new DBHelper();
 
         public FrmConsultarMascotas()
         {
@@ -23,8 +23,16 @@ namespace VeterinariaApp.Presentacion
         private void FrmConsultarMascotas_Load(object sender, EventArgs e)
         {
             cboTipo.Items.Clear();
-            dbHelper.CargarCombo(cboTipo, "SP_Consultar_Tipos");
+            DBHelper.ObtenerInstancia().CargarCombo(cboTipo, "SP_Consultar_Tipos");
+
         }
+
+        //Metodos
+        // ================================================================================================================================= //
+
+
+
+        // ================================================================================================================================= //
 
 
         //Eventos
@@ -34,11 +42,13 @@ namespace VeterinariaApp.Presentacion
         {
             List<Parametros> lista = new List<Parametros>();
 
+
+
             if (txtNombre.Text != "")
             {
                 lista.Add(new Parametros("@nombre", txtNombre.Text));
             }
-            if (cboTipo.SelectedItem.ToString() != "") 
+            if (cboTipo.SelectedItem != null) 
             {
                 lista.Add(new Parametros("@tipo", cboTipo.SelectedItem.ToString()));
             }
@@ -50,7 +60,7 @@ namespace VeterinariaApp.Presentacion
 
 
 
-            dbHelper.CargarGrilla(dgvMascotas, lista, @"SP_Consultar_Mascotas");
+            DBHelper.ObtenerInstancia().CargarGrilla(dgvMascotas, lista, @"SP_Consultar_Mascotas");
         }
         // ================================================================================================================================= //
     }

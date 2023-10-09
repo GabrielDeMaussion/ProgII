@@ -50,11 +50,18 @@
     <Compile Include="Datos\Parametros.cs" />
     <Compile Include="Entidades\Cliente.cs" />
     <Compile Include="Entidades\Mascota.cs" />
+    <Compile Include="Entidades\Usuario.cs" />
     <Compile Include="Presentacion\FrmConsultarMascotas.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Presentacion\FrmConsultarMascotas.Designer.cs">
       <DependentUpon>FrmConsultarMascotas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\FrmLogIn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\FrmLogIn.Designer.cs">
+      <DependentUpon>FrmLogIn.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentacion\FrmPrincipal.cs">
       <SubType>Form</SubType>
@@ -67,6 +74,9 @@
     <EmbeddedResource Include="Presentacion\FrmConsultarMascotas.resx">
       <DependentUpon>FrmConsultarMascotas.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\FrmLogIn.resx">
+      <DependentUpon>FrmLogIn.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\FrmPrincipal.resx">
       <DependentUpon>FrmPrincipal.cs</DependentUpon>
     </EmbeddedResource>
@@ -78,6 +88,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -92,6 +103,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Recursos\IconCruz.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Recursos\logoVeterinaria.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

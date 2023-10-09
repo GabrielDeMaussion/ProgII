@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using VeterinariaApp.Datos;
+using VeterinariaApp.Entidades;
 using VeterinariaApp.Presentacion;
 
 namespace VeterinariaApp
@@ -18,20 +19,38 @@ namespace VeterinariaApp
         // ================================================================================================================================= //
         //Instancia de todos los formuarios y clases para manejo de datos ENTRE todos los formuarios:
         FrmConsultarMascotas frmConsultarMascotas = new FrmConsultarMascotas();
+        FrmLogIn frmLogIn = new FrmLogIn();
 
+        //Atributos estaticos
+        static FrmPrincipal instancia;
+        static Usuario userActivo;
 
-        //Instancia de la clase helper:
-        DBHelper dbHelper = new DBHelper();
         // ================================================================================================================================= //
 
         public FrmPrincipal()
         {
             InitializeComponent();
+            instancia = this;
         }
 
         private void FrmPrincipal_Load(object sender, EventArgs e)
         {
+            frmLogIn.ShowDialog();
+            lblNombreUser.Text = userActivo.User;
+        }
 
+        public static FrmPrincipal ObtenerInstancia()
+        {
+            if (instancia == null)
+            {
+                instancia = new FrmPrincipal();
+            }
+            return instancia;
+        }
+
+        public void CargarUsuario(Usuario usuario)
+        {
+            userActivo = usuario;
         }
 
 
@@ -77,6 +96,22 @@ namespace VeterinariaApp
         private void TSMConsutarMascotas_Click(object sender, EventArgs e)
         {
             CambiarFormulario(frmConsultarMascotas);
+        }
+
+        private void TSMSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnCerrar_Click(object sender, EventArgs e)
+        {
+            //Comentado por ahora para facilitarme las pruebas
+            //if (MessageBox.Show("¿Estás seguro que desea cerrar el programa?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            //{
+            //    Environment.Exit(0);
+            //}
+
+            Environment.Exit(0);
         }
 
 
